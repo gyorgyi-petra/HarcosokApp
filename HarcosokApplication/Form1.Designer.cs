@@ -85,6 +85,7 @@
 			this.letrehozasButton.TabIndex = 3;
 			this.letrehozasButton.Text = "Létrehozás";
 			this.letrehozasButton.UseVisualStyleBackColor = true;
+			this.letrehozasButton.Click += new System.EventHandler(this.letrehozasButton_Click);
 			// 
 			// label3
 			// 
@@ -146,6 +147,7 @@
 			this.hozzaadButton.TabIndex = 10;
 			this.hozzaadButton.Text = "Hozzáad";
 			this.hozzaadButton.UseVisualStyleBackColor = true;
+			this.hozzaadButton.Click += new System.EventHandler(this.hozzaadButton_Click);
 			// 
 			// label7
 			// 
@@ -272,7 +274,6 @@
 			this.Controls.Add(this.label1);
 			this.Name = "Form1";
 			this.Text = "Form1";
-			
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
