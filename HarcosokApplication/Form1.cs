@@ -105,7 +105,7 @@ namespace HarcosokApplication
 			}
 		}
 
-	
+
 		//Képesség hozzáadása
 		private void hozzaadButton_Click(object sender, EventArgs e)
 		{
@@ -113,13 +113,60 @@ namespace HarcosokApplication
 			string nev = kepessegNeveTextBox.Text;
 			string leiras = kepessegekLeirasaTextBox.Text;
 
+			using (var conn = new MySqlConnection("Server=localhost;Database=harcos_keszito;UID=root;Pwd="))
+			{
+				conn.Open();
 
-			var command3 = conn.CreateCommand();
-			command3.CommandText = "INSERT INTO  kepessegek(harcos_id, nev, leiras) VALUES (@harcos_id,@nev,@leiras)";
-			command3.Parameters.AddWithValue("@harcos_id", hasznalo);
-			command3.Parameters.AddWithValue("@nev", nev);
-			command3.Parameters.AddWithValue("@leiras", leiras);
-			int erintettsorok = command3.ExecuteNonQuery();
+				var command3 = conn.CreateCommand();
+				command3.CommandText = "INSERT INTO  kepessegek(harcos_id, nev, leiras) VALUES (@harcos_id,@nev,@leiras)";
+				command3.Parameters.AddWithValue("@harcos_id", hasznalo);
+				command3.Parameters.AddWithValue("@nev", nev);
+				command3.Parameters.AddWithValue("@leiras", leiras);
+				int erintettsorok = command3.ExecuteNonQuery();
+			}
+
+		}
+
+		private void torlesButton_Click(object sender, EventArgs e)
+		{
+			string nev = kepessegekListBox.Text;
+
+			using (var conn = new MySqlConnection("Server=localhost;Database=harcos_keszito;UID=root;Pwd="))
+			{
+				conn.Open();
+
+
+
+
+				var command4 = conn.CreateCommand();
+				command4.CommandText = "DELETE FROM felhasznalo WHERE nev = @nev";
+				command4.Parameters.AddWithValue("@nev", nev);
+				int erintettsorok = command4.ExecuteNonQuery();
+
+
+			}
+		}
+
+		private void modositButton_Click(object sender, EventArgs e)
+		{
+			string leiras = kepessegekLeirasaTextBox.Text;
+			string kepesseg = kepessegekListBox.Text;
+
+			using (var conn = new MySqlConnection("Server=localhost;Database=harcos_keszito;UID=root;Pwd="))
+			{
+				conn.Open();
+
+
+
+
+				var command5 = conn.CreateCommand();
+				command5.CommandText = "UPDATE leiras SET leiras = @leiras WHERE nev = @nev";
+				command5.Parameters.AddWithValue("@nev",kepesseg);
+				command5.Parameters.AddWithValue("@leiras", leiras);
+				int erintettsorok = command5.ExecuteNonQuery();
+
+
+			}
 		}
 	}
 }

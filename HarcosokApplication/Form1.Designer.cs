@@ -46,7 +46,7 @@
 			this.label10 = new System.Windows.Forms.Label();
 			this.label11 = new System.Windows.Forms.Label();
 			this.torlesButton = new System.Windows.Forms.Button();
-			this.button2 = new System.Windows.Forms.Button();
+			this.modositButton = new System.Windows.Forms.Button();
 			this.harcosokListBox = new System.Windows.Forms.ListBox();
 			this.kepessegekListBox = new System.Windows.Forms.ListBox();
 			this.kepessegekLeirasaTextBox = new System.Windows.Forms.TextBox();
@@ -211,15 +211,17 @@
 			this.torlesButton.TabIndex = 17;
 			this.torlesButton.Text = "Törlés";
 			this.torlesButton.UseVisualStyleBackColor = true;
+			this.torlesButton.Click += new System.EventHandler(this.torlesButton_Click);
 			// 
-			// button2
+			// modositButton
 			// 
-			this.button2.Location = new System.Drawing.Point(487, 432);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(75, 23);
-			this.button2.TabIndex = 18;
-			this.button2.Text = "Módosít";
-			this.button2.UseVisualStyleBackColor = true;
+			this.modositButton.Location = new System.Drawing.Point(487, 432);
+			this.modositButton.Name = "modositButton";
+			this.modositButton.Size = new System.Drawing.Size(75, 23);
+			this.modositButton.TabIndex = 18;
+			this.modositButton.Text = "Módosít";
+			this.modositButton.UseVisualStyleBackColor = true;
+			this.modositButton.Click += new System.EventHandler(this.modositButton_Click);
 			// 
 			// harcosokListBox
 			// 
@@ -253,7 +255,7 @@
 			this.Controls.Add(this.kepessegekLeirasaTextBox);
 			this.Controls.Add(this.kepessegekListBox);
 			this.Controls.Add(this.harcosokListBox);
-			this.Controls.Add(this.button2);
+			this.Controls.Add(this.modositButton);
 			this.Controls.Add(this.torlesButton);
 			this.Controls.Add(this.label11);
 			this.Controls.Add(this.label10);
@@ -299,7 +301,7 @@
 		private System.Windows.Forms.Label label10;
 		private System.Windows.Forms.Label label11;
 		private System.Windows.Forms.Button torlesButton;
-		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.Button modositButton;
 		private System.Windows.Forms.ListBox harcosokListBox;
 		private System.Windows.Forms.ListBox kepessegekListBox;
 		private System.Windows.Forms.TextBox kepessegekLeirasaTextBox;
