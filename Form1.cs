@@ -87,7 +87,7 @@ namespace HarcosokApplication
 				conn.Open();
 
 				var ellenorzes = conn.CreateCommand();
-				ellenorzes.CommandText = "SELECT COUNT(*) FROM harcos WHERE nev = @nev";
+				ellenorzes.CommandText = "SELECT COUNT(*) FROM harcosok WHERE nev = @nev";
 				ellenorzes.Parameters.AddWithValue("@nev", nev);
 				var darab = (long)ellenorzes.ExecuteScalar();
 
@@ -100,7 +100,7 @@ namespace HarcosokApplication
 
 
 				var command = conn.CreateCommand();
-				command.CommandText = "INSERT INTO harcos (nev, letrehozas) VALUES (@nev,@letrehozas)";
+				command.CommandText = "INSERT INTO harcosok (nev, letrehozas) VALUES (@nev,@letrehozas)";
 				command.Parameters.AddWithValue("@nev", nev);
 				command.Parameters.AddWithValue("@letrehozas", "Dátum");
 				int erintettsorok = command.ExecuteNonQuery();
